@@ -65,7 +65,6 @@ export function DoctorDetailDialog({ doctor, onClose }: { doctor: Doctor; onClos
 
         {bookSlot ? (
           <InlineBookingForm
-            doctorId={doctor.id}
             slot={bookSlot}
             onBack={() => setBookSlot(null)}
             onBooked={() => {
@@ -126,12 +125,10 @@ export function DoctorDetailDialog({ doctor, onClose }: { doctor: Doctor; onClos
 }
 
 function InlineBookingForm({
-  doctorId,
   slot,
   onBack,
   onBooked,
 }: {
-  doctorId: number;
   slot: AdminSlot;
   onBack: () => void;
   onBooked: () => void;
